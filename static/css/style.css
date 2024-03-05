@@ -1,0 +1,22 @@
+/* Applying All Paragraph Rules */
+p {
+    color: aqua;
+    font-family: monospace;
+}
+
+
+h2 {
+    text-decoration: underline;
+    font-size: 2em;
+}
+
+table, td, th {
+    border-style: solid;
+    border-color: aqua;
+}
+
+/* Creating CSS Paragraph Selector Using Business-Ventures ID*/
+p#Business-Ventures {
+    font-weight: bold;
+    color: gold;
+}
