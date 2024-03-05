@@ -1,6 +1,6 @@
 /* Applying All Paragraph Rules */
 p {
-    color: gold;
+    color: red;
     font-family: monospace;
 }
 
@@ -13,13 +13,13 @@ h2 {
 /* Stylization of Tables w/ Border & Border Color */
 table, td, th {
     border-style: solid;
-    border-color: aqua;
+    border-color: darkblue;
 }
 
 /* Creation of CSS Paragraph Selector Using Business-Ventures ID*/
 p#Business-Ventures {
     font-weight: bold;
-    color: gold;
+    color: red;
 }
 
 /* Fav Foods Italicized & Given Background Color */
