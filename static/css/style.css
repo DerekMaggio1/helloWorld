@@ -4,19 +4,32 @@ p {
     font-family: monospace;
 }
 
-
+/* All Level 2 Headers Stylized */
 h2 {
     text-decoration: underline;
     font-size: 2em;
 }
 
+/* Stylization of Tables w/ Border & Border Color */
 table, td, th {
     border-style: solid;
     border-color: aqua;
 }
 
-/* Creating CSS Paragraph Selector Using Business-Ventures ID*/
+/* Creation of CSS Paragraph Selector Using Business-Ventures ID*/
 p#Business-Ventures {
     font-weight: bold;
     color: gold;
+}
+
+/* Fav Foods Italicized & Given Background Color */
+favFoods {
+    background: red;
+    font-style: italic;
+}
+
+/* Business School Logo Stylized */
+logo {
+    height: 5%;
+    width: 20%;
 }
