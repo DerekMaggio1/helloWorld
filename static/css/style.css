@@ -23,7 +23,7 @@ p#Business-Ventures {
 }
 
 /* Fav Foods Text Made Blue */
-p#favFoods {
+p.favFoods {
     color: blue;
 }
 
