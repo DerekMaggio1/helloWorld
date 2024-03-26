@@ -36,7 +36,7 @@
         </div>
         <p><a href="{{ url_for('contact') }}">Complete form again?</a></p>
     {% else %}
-        <form class="row g-3" action="{{ url_for('contact') }}" method="post" valid="element.checkValidity()">
+        <form class="row g-3" action="{{ url_for('contact') }}" method="post">
             <div class="mb-12">
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstName" name="firstName" required>
