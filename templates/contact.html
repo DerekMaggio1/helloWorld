@@ -1,5 +1,10 @@
 {% extends "base.html" %}
-    <h1>Contact Page</h1>
+
+{% block page_title %}Contact{% endblock %}
+
+{% block page_head %}Contact{% endblock %}
+
+{% block page_content %}
 
     {% if form_submitted %}
         <div class="col-12">
@@ -29,32 +34,26 @@
         <div class="col-md-6">
             <p>{{ 'Yes' if request.form.get('agree_check') else 'No' }}</p>
         </div>
-
-         <p><a href="{{ url_for('contact') }}">Complete form again?</a></p>
+        <p><a href="{{ url_for('contact') }}">Complete form again?</a></p>
     {% else %}
-
-    <form class="row g-3" action="{{url_for('contact') }}" method="post">
-      <div class="mb-12">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" name="firstName">
-      </div>
-      <div class="mb-12">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName" name="lastName">
-      </div>
-      <div class="mb-12">
-        <label for="email" class="form-label">Email address</label>
-        <input type="text" class="form-control" id="email" name="email">
-      </div>
-      <div class="mb-12">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="mb-12 form-check">
-        <input type="checkbox" class="form-check-input" id="agree_check" name="agree_check">
-        <label class="form-check-label" for="agree_check">Sign up to be emailed deals</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <form class="row g-3" action="{{ url_for('contact') }}" method="post" valid="element.checkValidity()">
+            <div class="mb-12">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
+            </div>
+            <div class="mb-12">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
+            </div>
+            <div class="mb-12">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-12 form-check">
+                <input type="checkbox" class="form-check-input" id="agree_check" name="agree_check" required>
+                <label class="form-check-label" for="agree_check">Sign up to be emailed deals</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     {% endif %}
 {% endblock %}
