@@ -16,7 +16,7 @@ table, td, th {
     border-color: darkblue;
 }
 
-/* Creation of CSS Paragraph Selector Using Business-Ventures ID*/
+/* Creation of CSS Paragraph Selector Using Business-Ventures ID */
 p#Business-Ventures {
     font-weight: bold;
     color: red;
@@ -28,7 +28,7 @@ p.favFoods {
 }
 
 /* Business School Logo Stylized */
-.logo {
+img.logo {
     height: 120px;
     width: 175px;
 }
