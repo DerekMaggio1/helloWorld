@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from models import db, Student, Major
 from datetime import datetime as dt
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -47,12 +49,13 @@ def student_create():
         first_name = request.form['first_name']
         last_name = request.form['last_name']
         major_id = request.form['major_id']
+        email = request.form['email']
 
         birth_date = request.form['birth_date']
         is_honors = True if 'is_honors' in request.form else False
 
         student = Student(first_name=first_name, last_name=last_name, major_id=major_id,
-                          birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors)
+                          birth_date=dt.strptime(birth_date, '%Y-%m-%d'), email=email, is_honors=is_honors)
         db.session.add(student)
         db.session.commit()
         flash(f'{first_name} {last_name} was successfully added!', 'success')
@@ -86,6 +89,7 @@ def student_edit(student_id):
             student.birthdate = dt.strptime(request.form['birth_date'], '%Y-%m-%d')
             student.num_credits_completed = request.form['num_credits_completed']
             student.gpa = request.form['gpa']
+            student.email = request.form['email']
             student.is_honors = True if 'is_honors' in request.form else False
 
             db.session.commit()
