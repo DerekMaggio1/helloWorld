@@ -2,8 +2,6 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from models import db, Student, Major
 from datetime import datetime as dt
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
