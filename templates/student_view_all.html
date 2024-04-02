@@ -23,6 +23,7 @@
             {% endif %}
         {% endwith %}
 
+<!-- Creation of Table Header Items in Table Row -->
     <table class="table table-striped">
         <tr>
             <th>Last Name</th>
@@ -33,12 +34,13 @@
             <th>Actions</th>
         </tr>
 
+<!-- Extending Base.html code for Table Data Items from Create_db.py File -->
         {% for each_student, each_major in students %}
         <tr>
             <td><a href="{{ url_for('student_view', student_id=each_student['student_id']) }}">{{ each_student['last_name'] }}</a></td>
             <td>{{ each_student['first_name'] }}</td>
             <td>{{ each_major['major'] }}</td>
-            <td>{{ email['email'] }}</td>
+            <td>{{ each_student['email'] }}</td>
             <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
             <td>
                 <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Edit</a>

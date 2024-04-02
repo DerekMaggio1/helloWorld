@@ -23,6 +23,7 @@
 
 {% block page_content %}
 
+<!-- Integrating Bootstrap's Entry Boxes -->
 <form class="row g-3"
       action="{{ url_for('student_edit', student_id=student['student_id']) if student else url_for('student_create') }}" method="post">
   <div class="col-md-4">
@@ -50,6 +51,7 @@
     {% endif %}
   </div>
 
+<!-- Integrating Bootstap's Drop Down Form Menu for Selecting Student Major -->
   <div class="col-md-4">
     <label for="major_id" class="form-label"><strong>Major</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -68,6 +70,7 @@
     {% endif %}
   </div>
 
+<!-- Input Box for Student Email Address -->
     <div class="col-md-4">
         <label for="email" class="form-label"><strong>Email</strong></label>
         {% if action and action in ['create', 'update'] %}
@@ -101,6 +104,8 @@
         {% if action and action in ['create', 'update'] %}
     <div class="form-check">
 
+
+<!-- Checkbox for If Student is an Honor's Student or Not -->
       <input class="form-check-input" type="checkbox" value="" id="is_honors" name="is_honors"
               {{ 'checked' if student and student['is_honors'] == True else '' }}>
         {% endif %}
@@ -112,7 +117,7 @@
       </label>
   </div>
 
-
+<!-- Integrating Bootstrap's Submit Button Code -->
   </div>
   <div class="col-12 text-center">
     {% if action and action in ['create', 'update'] %}
