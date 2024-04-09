@@ -223,7 +223,7 @@ def page_not_found(e):
 @login_required
 @role_required(['ADMIN','MANAGER'])
 def training():
-    flash(f'Welcome to your training for the TerpSys Student Information System. Training materials are currently under construction, but will be created very soon. Please check back soon or email Derek Maggio at href="mailto:dmaggio1@umd.edu" if you wish to be placed on the waiting list')
+    return render_template('training.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
